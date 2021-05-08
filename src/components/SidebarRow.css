@@ -16,7 +16,7 @@
   font-weight: 500;
 }
 
-.sidebarrow:hover {
+.sidebarRow:hover {
   background-color: lightgray;
   cursor: pointer;
 }

@@ -18,7 +18,7 @@ const Sidebar = () => {
       <SidebarRow Icon={WhatshotIcon} title="Trending" />
       <SidebarRow Icon={SubscriptionsIcon} title="Subscriptions" />
       <hr />
-      <SidebarRow selected Icon={VideLibraryIcon} title="Library" />
+      <SidebarRow Icon={VideLibraryIcon} title="Library" />
       <SidebarRow Icon={HistoryIcon} title="History" />
       <SidebarRow Icon={OndemanVideoIcon} title="Your Videos" />
       <SidebarRow Icon={WatchLaterIcon} title="Watch Later" />
