@@ -7,14 +7,17 @@ import SearchPage from "./components/SearchPage";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Button, Paper } from "@material-ui/core";
 import { useState } from "react";
-import darkTheme from "./Theme";
+// import darkTheme from "./Theme";
+import { useContext } from "react";
+
+import { ThemeContext } from "./ThemeContext";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const myTheme = useContext(ThemeContext);
 
   const theme = createMuiTheme({
     palette: {
-      type: darkMode ? "dark" : "light",
+      type: myTheme.darkMode ? "dark" : "light",
     },
   });
 
@@ -24,7 +27,9 @@ function App() {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => setDarkMode(!darkMode)}
+          onClick={() => {
+            myTheme.setDarkMode(!myTheme.darkMode);
+          }}
         >
           Switch Theme
         </Button>

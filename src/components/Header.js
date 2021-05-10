@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // import "./Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
@@ -8,6 +8,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import Avatar from "@material-ui/core/Avatar";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import { ThemeContext } from "../ThemeContext";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -47,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid",
     borderColor: theme.palette.grey[400],
   },
+  searchIcon: {
+    display: "flex",
+    alignItems: "center",
+  },
   headerIcons: {
     display: "flex",
     alignItems: "center",
@@ -56,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Header = () => {
+  const theme = useContext(ThemeContext);
   const classes = useStyles();
   const [inputSearch, setInputSearch] = useState("");
 
@@ -66,7 +72,13 @@ const Header = () => {
         <Link to="/">
           <img
             className={classes.headerLogo}
-            src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+            src={
+              theme.darkMode
+                ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/YouTube_light_logo_%282017%29.svg/1200px-YouTube_light_logo_%282017%29.svg.png"
+                : "https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+            }
+            // src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+            //FOr darkMode https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/YouTube_light_logo_%282017%29.svg/1920px-YouTube_light_logo_%282017%29.svg
             alt="Youtube logo"
           />
         </Link>
@@ -79,7 +91,7 @@ const Header = () => {
           className={classes.headerInputField}
           onChange={(e) => setInputSearch(e.target.value)}
         />
-        <Link to={`/search/${inputSearch}`}>
+        <Link to={`/search/${inputSearch}`} className={classes.searchIcon}>
           <SearchIcon className={classes.headerInputButton} />
         </Link>
       </div>
