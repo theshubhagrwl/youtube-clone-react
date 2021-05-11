@@ -5,6 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   rVideos: {
     flex: 0.8,
+    [theme.breakpoints.down("md")]: {
+      flex: 1,
+    },
     backgroundColor: theme.palette.background.default,
     padding: "40px 20px",
     paddingBottom: 0,

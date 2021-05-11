@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarRow from "./SidebarRow";
 import HomeIcon from "@material-ui/icons/Home";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
@@ -15,6 +15,9 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   sidebar: {
     flex: 0.2,
+    [theme.breakpoints.down("md")]: {
+      flex: 0.1,
+    },
     marginRight: "10px",
     backgroundColor: theme.palette.background.paper,
   },
@@ -29,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Sidebar = () => {
   const classes = useStyles();
+
+  const [showMore, setShowMore] = useState(false);
+
   return (
     <div className={classes.sidebar}>
       <SidebarRow selected Icon={HomeIcon} title="Home" />
@@ -40,7 +46,23 @@ const Sidebar = () => {
       <SidebarRow Icon={OndemanVideoIcon} title="Your Videos" />
       <SidebarRow Icon={WatchLaterIcon} title="Watch Later" />
       <SidebarRow Icon={ThumbsUpAltOutlinedIcon} title="Liked Videos" />
-      <SidebarRow Icon={ExpandMoreOutlinedIcon} title="Show More" />
+      <div
+        onClick={() => {
+          setShowMore(!showMore);
+        }}
+      >
+        <SidebarRow
+          Icon={ExpandMoreOutlinedIcon}
+          title={showMore ? "Show Less" : "Show More"}
+        />
+      </div>
+      {showMore && (
+        <>
+          <SidebarRow Icon={VideLibraryIcon} title="Library" />
+          <SidebarRow Icon={HistoryIcon} title="History" />
+          <SidebarRow Icon={OndemanVideoIcon} title="Your Videos" />
+        </>
+      )}
       <hr className={classes.sidebarHR} />
     </div>
   );

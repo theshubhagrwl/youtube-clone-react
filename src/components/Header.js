@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 100,
   },
   headerLogo: {
-    height: "25px",
+    height: "2.5vh",
     objectFit: "contain",
     marginLeft: "20px",
   },
@@ -29,24 +29,34 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     width: "40%",
-    border: "1px solid #d3d3d3",
+    border: "none",
+    [theme.breakpoints.down("xs")]: {
+      width: "auto",
+      border: "none",
+      justifyContent: "flex-end",
+    },
   },
   headerInputField: {
     flex: 1,
     border: "none",
     outline: "none",
-    background: theme.palette.background.paper,
+    background: theme.palette.background.default,
     color: theme.palette.text.primary,
+    fontSize: "0.8rem",
+    padding: "10px",
     "&::placeholder": {
       color: theme.palette.text.secondary,
+    },
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
     },
   },
   headerInputButton: {
     width: "50px",
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.default,
+    opacity: 0.4,
     color: theme.palette.text.primary,
-    border: "1px solid",
-    borderColor: theme.palette.grey[400],
+    padding: "5px",
   },
   searchIcon: {
     display: "flex",
@@ -58,6 +68,9 @@ const useStyles = makeStyles((theme) => ({
   },
   headerIcon: {
     marginRight: "2vh",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 }));
 const Header = () => {
