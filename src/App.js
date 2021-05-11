@@ -18,6 +18,10 @@ function App() {
   const theme = createMuiTheme({
     palette: {
       type: myTheme.darkMode ? "dark" : "light",
+      // background : {
+      //   paper :  "" ,
+      //   default : "" ,
+      // }
     },
   });
 
