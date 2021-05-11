@@ -6,10 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchPage from "./components/SearchPage";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Button, Paper } from "@material-ui/core";
-import { useState } from "react";
-// import darkTheme from "./Theme";
 import { useContext } from "react";
-
 import { ThemeContext } from "./ThemeContext";
 
 function App() {

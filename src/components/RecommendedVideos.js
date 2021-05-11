@@ -1,12 +1,31 @@
 import React from "react";
-import "./RecommendedVideos.css";
 import VideoCard from "./VideoCard";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  rVideos: {
+    flex: 0.8,
+    backgroundColor: theme.palette.background.default,
+    padding: "40px 20px",
+    paddingBottom: 0,
+  },
+  heading: {
+    marginLeft: "5px",
+    marginBottom: "20px",
+    color: theme.palette.text.primary,
+  },
+  videos: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+}));
 
 const RecommendedVideos = () => {
+  const classes = useStyles();
   return (
-    <div className="recommendedVideos">
-      <h2>Recommended videos</h2>
-      <div className="recommendedVideos__videos">
+    <div className={classes.rVideos}>
+      <h2 className={classes.heading}>Recommended videos</h2>
+      <div className={classes.videos}>
         <VideoCard
           title="Hello This is Shubh Agrawal"
           channel="Shubh Agrawal"
