@@ -14,11 +14,12 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   sidebar: {
-    flex: 0.2,
-    [theme.breakpoints.down("md")]: {
-      flex: 0.1,
+    flex: 0.15,
+    // [theme.breakpoints.between("sm", "md")]: {
+    [theme.breakpoints.down("sm")]: {
+      flex: 0.05,
     },
-    marginRight: "10px",
+    // marginRight: "10px",
     backgroundColor: theme.palette.background.paper,
   },
   sidebarHR: {

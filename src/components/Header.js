@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     position: "sticky",
     top: 0,
     zIndex: 100,
+    background: theme.palette.background.paper,
   },
   headerLogo: {
     height: "2.5vh",

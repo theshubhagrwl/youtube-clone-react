@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.grey[100],
       cursor: "pointer",
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       padding: "20px 10px",
       justifyContent: "center",
     },
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.grey[700],
       cursor: "pointer",
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       padding: "20px 10px",
       justifyContent: "center",
     },
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "20px",
     fontSize: "0.9em",
     fontWeight: "500",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "none",
       visibility: "hidden",
     },
