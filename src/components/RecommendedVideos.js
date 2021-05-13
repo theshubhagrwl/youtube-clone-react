@@ -11,6 +11,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
     padding: "40px 20px",
     paddingBottom: 0,
+    "& a": {
+      textDecoration: "none",
+      color: theme.palette.text.primary,
+    },
   },
   heading: {
     marginLeft: "5px",
@@ -30,86 +34,77 @@ const RecommendedVideos = () => {
     <div className={classes.rVideos}>
       {/* <h2 className={classes.heading}>Recommended videos</h2> */}
       <div className={classes.videos}>
-        <VideoCard
-          title="Cool feature in Microsoft Edge you didn't know! 🔥"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i9.ytimg.com/vi_webp/W9W3TWCwR9s/mqdefault.webp?time=1620804000000&sqp=CKCD7oQG&rs=AOn4CLCO1-T5UogiFr7MckPq0tZoR_fVPQ"
-          timestamp="1 week ago"
-          views="100k Views"
-        />
-        <VideoCard
-          title="Simple way to remove distractions on websites 🔥"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i9.ytimg.com/vi_webp/JmPd_Olhb_A/mqdefault.webp?time=1620804000000&sqp=CKCD7oQG&rs=AOn4CLAT9kSTmLvxWn2_Vs6Sxx9-2l3Brg"
-          timestamp="1 week ago"
-          views="200K Views"
-        />
-        <VideoCard
-          title="Budget Tracker | Project Showcase | React + Django"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i.ytimg.com/vi/w9lVl3qwkwE/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCe1E2KjN8M0pkbOwoZgKWWtTLVGg"
-          timestamp="3 month ago"
-          views="900k Views"
-        />
-        <VideoCard
-          title="Tic Tac Toe In C++ (Console)"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i9.ytimg.com/vi_webp/OleJMuREzBA/mqdefault.webp?time=1620804000000&sqp=CKCD7oQG&rs=AOn4CLCDWs-xr1Ozp272EPnGsOK3AfjBhA"
-          timestamp="1 year ago"
-          views="100k Views"
-        />
-        <VideoCard
-          title="Snake Game With Pygame #1"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i9.ytimg.com/vi_webp/LBpSBuQ2LRY/mqdefault.webp?time=1620804000000&sqp=CKCD7oQG&rs=AOn4CLDdRnHO2ZHAv4v9mD_ZyqciUH2xdA"
-          timestamp="1 year ago"
-          views="600k Views"
-        />
-        <VideoCard
-          title="Snake Game With Pygame #2"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i9.ytimg.com/vi/uGqmpLLuWZI/mqdefault.jpg?time=1620804000000&sqp=CKCD7oQG&rs=AOn4CLAhZPavFA-HWIiqoamd2ZgHiSttiA"
-          timestamp="1 year ago"
-          views="650k Views"
-        />
-        <VideoCard
-          title="Snake Game With Pygame #3"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i9.ytimg.com/vi/z41mJZ81tYw/mqdefault.jpg?time=1620804000000&sqp=CKCD7oQG&rs=AOn4CLCYhII3AwktzLoZ5Icr9JYo1Qtzcg"
-          timestamp="1 year ago"
-          views="730k Views"
-        />
-        <VideoCard
-          title="Tic Tac Toe Game With Pygame #1"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i9.ytimg.com/vi_webp/9pNHM82r83k/mqdefault.webp?time=1620804000000&sqp=CKCD7oQG&rs=AOn4CLCk0ujKxrBGmHj35F7L2AjXPXmu8Q"
-          timestamp="1 year ago"
-          views="1.4M Views"
-        />
-        <VideoCard
-          title="Tic Tac Toe Game With Pygame #2"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i9.ytimg.com/vi/Nxe_MnTIva0/mqdefault.jpg?time=1620804000000&sqp=CKCD7oQG&rs=AOn4CLCK15KyQfU03VeCCwG2Xk4UG-dNjQ"
-          timestamp="1 year ago"
-          views="1.2M Views"
-        />
-        <VideoCard
-          title="Tic Tac Toe Game With Pygame #3"
-          channel="Shubh Agrawal"
-          channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
-          image="https://i9.ytimg.com/vi/mEml6M3g-P8/mqdefault.jpg?time=1620804000000&sqp=CKCD7oQG&rs=AOn4CLAdfPoDbBJ7xjEBQq4rKugh7bN4lw"
-          timestamp="1 year ago"
-          views="1M Views"
-        />
+        <a href="https://www.youtube.com/watch?v=W9W3TWCwR9s">
+          <VideoCard
+            title="Cool feature in Microsoft Edge you didn't know! 🔥"
+            channel="Shubh Agrawal"
+            channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
+            image="https://i.ytimg.com/vi/W9W3TWCwR9s/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDeyNTa3DgmyWAP4XWy_4bFwQQxvA"
+            timestamp="1 week ago"
+            views="100k Views"
+          />{" "}
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=JmPd_Olhb_A">
+          <VideoCard
+            title="Simple way to remove distractions on websites 🔥"
+            channel="Shubh Agrawal"
+            channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
+            image="https://i.ytimg.com/vi/JmPd_Olhb_A/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCVgm7N1teQ6tJ7Hss6pxO8ipNPhg"
+            timestamp="1 week ago"
+            views="200K Views"
+          />
+        </a>
+        <a href="https://www.youtube.com/watch?v=w9lVl3qwkwE">
+          <VideoCard
+            title="Budget Tracker | Project Showcase | React + Django"
+            channel="Shubh Agrawal"
+            channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
+            image="https://i.ytimg.com/vi/w9lVl3qwkwE/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCe1E2KjN8M0pkbOwoZgKWWtTLVGg"
+            timestamp="3 month ago"
+            views="900k Views"
+          />
+        </a>
+        <a href="https://www.youtube.com/watch?v=OleJMuREzBA">
+          <VideoCard
+            title="Tic Tac Toe In C++ (Console)"
+            channel="Shubh Agrawal"
+            channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
+            image="https://i.ytimg.com/vi/OleJMuREzBA/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBK9whYAosqogESAg6sIi7DGNG_HQ"
+            timestamp="1 year ago"
+            views="100k Views"
+          />
+        </a>
+        <a href="https://www.youtube.com/watch?v=LBpSBuQ2LRY">
+          <VideoCard
+            title="Snake Game With Pygame #1"
+            channel="Shubh Agrawal"
+            channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
+            image="https://i.ytimg.com/vi/9pNHM82r83k/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDy5N8pLj6JwvUouL_Ub3nZizjSzg"
+            timestamp="1 year ago"
+            views="600k Views"
+          />
+        </a>
+        <a href="https://www.youtube.com/watch?v=uGqmpLLuWZI">
+          <VideoCard
+            title="Snake Game With Pygame #2"
+            channel="Shubh Agrawal"
+            channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
+            image="https://i.ytimg.com/vi/Nxe_MnTIva0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDWIjEpLGE6SDOkJCpYkSNiN9pnSA"
+            timestamp="1 year ago"
+            views="650k Views"
+          />
+        </a>
+        <a href="https://www.youtube.com/watch?v=z41mJZ81tYw">
+          <VideoCard
+            title="Snake Game With Pygame #3"
+            channel="Shubh Agrawal"
+            channelImage="https://yt3.ggpht.com/ytc/AAUvwnjew1oGHjLXwLL2Iu29b6fDMLJxotl91aot1OUR=s176-c-k-c0x00ffffff-no-rj"
+            image="https://i.ytimg.com/vi/mEml6M3g-P8/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDK2bWvJ-xmkFIxUwctcAWxMXkeMg"
+            timestamp="1 year ago"
+            views="730k Views"
+          />
+        </a>
       </div>
     </div>
   );
