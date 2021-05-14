@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchPage from "./components/SearchPage";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { Button, Paper } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 
@@ -25,15 +25,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Paper style={{ height: "100vh" }}>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => {
-            myTheme.setDarkMode(!myTheme.darkMode);
-          }}
-        >
-          Switch Theme
-        </Button>
         <div className="App">
           <Router>
             <Header />
@@ -42,6 +33,12 @@ function App() {
                 <div className="app__page">
                   <Sidebar />
                   <RecommendedVideos />
+                </div>
+              </Route>
+              <Route exact path="/search">
+                <div className="app__page">
+                  <Sidebar />
+                  <SearchPage />
                 </div>
               </Route>
               <Route path="/search/:searchTerm">

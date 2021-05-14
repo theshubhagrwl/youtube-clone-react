@@ -105,6 +105,26 @@ const RecommendedVideos = () => {
             views="730k Views"
           />
         </a>
+        <a href="https://youtu.be/1-TZqOsVCNM">
+          <VideoCard
+            title="How to Get Rich"
+            channel="Naval"
+            channelImage="https://yt3.ggpht.com/ytc/AAUvwniqNSgIY59Kxpdw07nBtJiyWg7NscvGb1KCGuOl=s88-c-k-c0x00ffffff-no-rj"
+            image="https://i.ytimg.com/vi/1-TZqOsVCNM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDBFFr7eRBe8DtZ1ZBc_2UbDHSR9A"
+            timestamp="1 year ago"
+            views="1.6M Views"
+          />
+        </a>
+        <a href="https://youtu.be/c7Ya5xoy2nw">
+          <VideoCard
+            title="Photosynthesis Under the Microscope"
+            channel="Sci- Inspi"
+            channelImage="https://yt3.ggpht.com/ytc/AAUvwnhLgtls_OjT0nGBqq1vAUoAJA7fr4NKx6kkAOJH=s88-c-k-c0x00ffffff-no-rj"
+            image="https://i.ytimg.com/vi/c7Ya5xoy2nw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDjKsZh43-UZCwffaJIBGhvKosFAg"
+            timestamp="1 year ago"
+            views="1.4M Views"
+          />
+        </a>
       </div>
     </div>
   );
