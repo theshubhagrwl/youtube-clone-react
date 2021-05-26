@@ -9,6 +9,10 @@ import { Paper } from "@material-ui/core";
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 
+//redux
+import { Provider } from "react-redux";
+import store from "./store/store";
+
 function App() {
   const myTheme = useContext(ThemeContext);
 
@@ -23,35 +27,37 @@ function App() {
   });
 
   return (
-    <ThemeProvider theme={theme}>
-      <Paper style={{ height: "100vh" }}>
-        <div className="App">
-          <Router>
-            <Header />
-            <Switch>
-              <Route exact path="/">
-                <div className="app__page">
-                  <Sidebar />
-                  <RecommendedVideos />
-                </div>
-              </Route>
-              <Route exact path="/search">
-                <div className="app__page">
-                  <Sidebar />
-                  <SearchPage />
-                </div>
-              </Route>
-              <Route path="/search/:searchTerm">
-                <div className="app__page">
-                  <Sidebar />
-                  <SearchPage />
-                </div>
-              </Route>
-            </Switch>
-          </Router>
-        </div>
-      </Paper>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Paper style={{ height: "100vh" }}>
+          <div className="App">
+            <Router>
+              <Header />
+              <Switch>
+                <Route exact path="/">
+                  <div className="app__page">
+                    <Sidebar />
+                    <RecommendedVideos />
+                  </div>
+                </Route>
+                <Route exact path="/search">
+                  <div className="app__page">
+                    <Sidebar />
+                    <SearchPage />
+                  </div>
+                </Route>
+                <Route path="/search/:searchTerm">
+                  <div className="app__page">
+                    <Sidebar />
+                    <SearchPage />
+                  </div>
+                </Route>
+              </Switch>
+            </Router>
+          </div>
+        </Paper>
+      </ThemeProvider>
+    </Provider>
   );
 }
 

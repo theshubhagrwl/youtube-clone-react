@@ -5,6 +5,10 @@ import VideoRow from "./VideoRow";
 
 import { makeStyles } from "@material-ui/core/styles";
 
+//redux
+import { useSelector, useDispatch } from "react-redux";
+import { setLoadingFalse, setLoadingTrue } from "../store/actions";
+
 const useStyles = makeStyles((theme) => ({
   searchPage: {
     flex: 1,
@@ -38,11 +42,23 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchPage = () => {
   const classes = useStyles();
+
+  const loading = useSelector((state) => state.loading);
+  const dispatch = useDispatch();
+
   return (
     <div className={classes.searchPage}>
       <div className={classes.filter}>
         <TuneOutlinedIcon />
-        <h2>FILTERS</h2>
+        <h2
+          onClick={() => {
+            dispatch(setLoadingFalse());
+            // dispatch(setLoadingTrue());
+            console.log(loading);
+          }}
+        >
+          FILTERS
+        </h2>
       </div>
       <hr />
 

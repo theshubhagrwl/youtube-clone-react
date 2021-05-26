@@ -14,6 +14,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { Button } from "@material-ui/core";
 
+//redux
+import { connect } from "react-redux";
+import { setLoadingFalse, setLoadingTrue } from "../store/actions";
+
 const useStyles = makeStyles((theme) => ({
   header: {
     display: "flex",
@@ -100,7 +104,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Header = () => {
+
+const Header = ({ loading, setLoadingTrue, setLoadingFalse }) => {
   const theme = useContext(ThemeContext);
   const classes = useStyles();
   const [inputSearch, setInputSearch] = useState("");
@@ -143,7 +148,14 @@ const Header = () => {
   return (
     <div className={classes.header}>
       <div className={classes.headerLogo}>
-        <MenuIcon />
+        <div
+          onClick={() => {
+            setLoadingFalse();
+            console.log("This is coming from Redux", loading);
+          }}
+        >
+          <MenuIcon />
+        </div>
         <Link to="/">
           <img
             className={classes.headerLogo}
@@ -210,4 +222,17 @@ const Header = () => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  loading: state,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setLoadingTrue: () => {
+    dispatch(setLoadingTrue());
+  },
+  setLoadingFalse: () => {
+    dispatch(setLoadingFalse());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
